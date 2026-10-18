@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T00:00:00Z",
+  "title": "Design System: Red Medici",
+  "extensions": {
+    "colorMeta": {
+      "crimson": { "role": "primary", "displayName": "Seconds-Hand Crimson", "canonical": "#d71920", "tonalRamp": ["#3d0507", "#5e080b", "#850c11", "#b3141a", "#d71920", "#e8575c", "#f29a9d", "#fbdcdd"] },
+      "crimson-deep": { "role": "primary", "displayName": "Pressed Crimson", "canonical": "#b3141a", "tonalRamp": ["#330405", "#520709", "#760b0f", "#b3141a", "#cf3a3f", "#e3797c", "#f1b3b5", "#fae4e5"] },
+      "porcelain": { "role": "neutral", "displayName": "Porcelain Dial", "canonical": "#f8f8f6", "tonalRamp": ["#262625", "#3f3f3d", "#5a5a57", "#7a7a76", "#a3a39f", "#cfcfcb", "#e9e9e7", "#f8f8f6"] },
+      "plate": { "role": "neutral", "displayName": "Plate Grey", "canonical": "#e9e9e7", "tonalRamp": ["#262625", "#3f3f3d", "#5a5a57", "#7a7a76", "#a3a39f", "#cfcfcb", "#e9e9e7", "#f8f8f6"] },
+      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#242424", "tonalRamp": ["#141414", "#242424", "#3a3a3a", "#555555", "#777777", "#9e9e9e", "#c8c8c8", "#ededed"] },
+      "ink-2": { "role": "neutral", "displayName": "Worn Graphite", "canonical": "#5a5a57", "tonalRamp": ["#1d1d1c", "#33332f", "#5a5a57", "#7a7a76", "#9b9b97", "#bbbbb7", "#dadad7", "#f3f3f1"] },
+      "rule": { "role": "neutral", "displayName": "Hairline", "canonical": "#cfcfcb", "tonalRamp": ["#2a2a28", "#45453f", "#62625e", "#868682", "#aaaaa6", "#cfcfcb", "#e3e3e0", "#f5f5f3"] },
+      "on-dark-2": { "role": "neutral", "displayName": "Case-Back Secondary", "canonical": "#b9b9b5", "tonalRamp": ["#262625", "#40403e", "#5d5d5a", "#7d7d79", "#9c9c98", "#b9b9b5", "#d6d6d3", "#f0f0ee"] },
+      "rule-dark": { "role": "neutral", "displayName": "Case-Back Hairline", "canonical": "rgb(248 248 246 / 0.16)", "tonalRamp": ["rgb(248 248 246 / 0.04)", "rgb(248 248 246 / 0.08)", "rgb(248 248 246 / 0.12)", "rgb(248 248 246 / 0.16)", "rgb(248 248 246 / 0.24)", "rgb(248 248 246 / 0.36)", "rgb(248 248 246 / 0.55)", "rgb(248 248 246 / 0.8)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Two-line hero headline only, lines masked for the intro." },
+      "headline": { "displayName": "Headline", "purpose": "Section heads: Specifications, Reserve." },
+      "statement": { "displayName": "Statement", "purpose": "The single manifesto paragraph, max 30ch." },
+      "title": { "displayName": "Title", "purpose": "Loupe detail titles and spec group heads." },
+      "body": { "displayName": "Body", "purpose": "Lede, running copy, waitlist input." },
+      "small": { "displayName": "Small", "purpose": "Labels, nav links, form messages, spec terms, footer." },
+      "label": { "displayName": "Reference (mono)", "purpose": "Ref. RM-01 and detail reference numbers; spec values use the same face at 0.8125rem." }
+    },
+    "shadows": [
+      { "name": "header-rule", "value": "0 1px 0 var(--rule)", "purpose": "Hairline under the header once it turns solid. A rule, not elevation." },
+      { "name": "focus-underline", "value": "0 1px 0 var(--crimson)", "purpose": "Doubles the waitlist input underline on focus." },
+      { "name": "quiet-outline", "value": "inset 0 0 0 1px var(--graphite)", "purpose": "Outline of the quieted header CTA." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All CSS state transitions." },
+      { "name": "duration-button", "value": "180ms", "purpose": "Button background and press." },
+      { "name": "duration-state", "value": "240ms", "purpose": "Header ground, link underline draw, loupe title colour." },
+      { "name": "duration-expand", "value": "420ms", "purpose": "Active loupe caption body expanding." },
+      { "name": "intro", "value": "GSAP timeline, expo.out; media 1.8s, scale wipe 1.4s power3.inOut, headline lines 1.2s stagger 0.1s", "purpose": "The single page-load sequence; skipped for reduced motion or hidden tabs." },
+      { "name": "loupe-scrub", "value": "pin 3.4 viewport heights, scrub 0.7, snap labelsDirectional 0.25-0.7s power2.inOut", "purpose": "The only scroll-driven motion, in the macro explorer." }
+    ],
+    "breakpoints": [
+      { "name": "wide", "value": "1100px" },
+      { "name": "tablet", "value": "860px" },
+      { "name": "plates-two-up", "value": "600px" },
+      { "name": "phone", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The crimson action: waitlist submit, Reserve a pair.",
+      "html": "<button class=\"ds-btn\" type=\"button\">Join the waitlist</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0 1.5rem; border: 0; border-radius: 0; background: var(--crimson, #d71920); color: var(--porcelain, #f8f8f6); font: 600 1rem/1 var(--f-serif, 'Bodoni Moda Variable', Didot, serif); letter-spacing: 0.01em; cursor: pointer; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:hover { background: var(--crimson-deep, #b3141a); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid var(--crimson, #d71920); outline-offset: 3px; }"
+    },
+    {
+      "name": "Quiet Header Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Header Reserve CTA while the hero form is on screen; crimson steps back.",
+      "html": "<a class=\"ds-btn-quiet\" href=\"#\">Reserve</a>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0 1.125rem; border-radius: 0; background: transparent; color: var(--graphite, #242424); box-shadow: inset 0 0 0 1px var(--graphite, #242424); font: 600 0.9375rem/1 var(--f-serif, 'Bodoni Moda Variable', Didot, serif); letter-spacing: 0.01em; text-decoration: none; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-quiet:hover { background: var(--graphite, #242424); color: var(--porcelain, #f8f8f6); } .ds-btn-quiet:focus-visible { outline: 2px solid var(--crimson, #d71920); outline-offset: 3px; }"
+    },
+    {
+      "name": "Waitlist Form",
+      "kind": "input",
+      "refersTo": "waitlist-input",
+      "description": "Underline-only email field with the primary button on the same baseline.",
+      "html": "<form class=\"ds-waitlist\" onsubmit=\"return false\"><label class=\"ds-waitlist-label\" for=\"ds-email\">Email address</label><input class=\"ds-waitlist-input\" id=\"ds-email\" type=\"email\" placeholder=\"name@example.com\" /><button class=\"ds-waitlist-btn\" type=\"submit\">Join the waitlist</button><p class=\"ds-waitlist-msg\">Price and release note.</p></form>",
+      "css": ".ds-waitlist { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'label label' 'input button' 'msg msg'; align-items: end; max-width: 34rem; font-family: var(--f-serif, 'Bodoni Moda Variable', Didot, serif); } .ds-waitlist-label { grid-area: label; font-size: 0.9375rem; color: var(--ink-2, #5a5a57); margin-bottom: 0.25rem; } .ds-waitlist-input { grid-area: input; min-width: 0; height: 3.25rem; padding: 0 1rem 0 0; border: 0; border-bottom: 1px solid var(--graphite, #242424); border-radius: 0; background: transparent; color: var(--graphite, #242424); font: 400 1.125rem/1 inherit; font-family: inherit; caret-color: var(--crimson, #d71920); } .ds-waitlist-input::placeholder { color: #7a7a76; } .ds-waitlist-input:focus-visible { outline: none; border-bottom-color: var(--crimson, #d71920); box-shadow: 0 1px 0 var(--crimson, #d71920); } .ds-waitlist-btn { grid-area: button; min-height: 3.25rem; padding: 0 1.5rem; border: 0; border-radius: 0; background: var(--crimson, #d71920); color: var(--porcelain, #f8f8f6); font: 600 1rem/1 inherit; font-family: inherit; cursor: pointer; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-waitlist-btn:hover { background: var(--crimson-deep, #b3141a); } .ds-waitlist-msg { grid-area: msg; margin: 0.75rem 0 0; font-size: 0.9375rem; color: var(--ink-2, #5a5a57); }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "description": "Wordmark, mono reference after a hairline, links with draw-in underline.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\"><svg viewBox=\"0 0 24 32\" width=\"14\" aria-hidden=\"true\"><path d=\"M3 1h13l7 8-4 11-9 11-6-9-3-12z\" fill=\"#d71920\"/></svg>Red Medici</a><span class=\"ds-nav-ref\">Ref. RM-01</span><a class=\"ds-nav-link\" href=\"#\">Design</a><a class=\"ds-nav-link\" href=\"#\">Specs</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; height: 4.5rem; padding: 0 2rem; background: var(--porcelain, #f8f8f6); box-shadow: 0 1px 0 var(--rule, #cfcfcb); font-family: var(--f-serif, 'Bodoni Moda Variable', Didot, serif); color: var(--graphite, #242424); } .ds-wordmark { display: inline-flex; align-items: center; gap: 0.625rem; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; color: inherit; text-decoration: none; } .ds-nav-ref { margin-right: auto; padding-left: 1.5rem; border-left: 1px solid var(--rule, #cfcfcb); font: 400 0.75rem/1.5 var(--f-mono, 'Martian Mono Variable', ui-monospace, monospace); color: var(--ink-2, #5a5a57); } .ds-nav-link { font-size: 0.9375rem; color: inherit; text-decoration: none; padding-bottom: 2px; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-link:hover, .ds-nav-link:focus-visible { background-size: 100% 1px; } .ds-nav-link:focus-visible { outline: 2px solid var(--crimson, #d71920); outline-offset: 3px; }"
+    },
+    {
+      "name": "Minute-Track Scale",
+      "kind": "custom",
+      "description": "Hero timeline: 60 fine ticks, every fifth longer, with a crimson hand tracking video time.",
+      "html": "<div class=\"ds-scale\"><span class=\"ds-scale-hand\"></span></div>",
+      "css": ".ds-scale { position: relative; width: 100%; height: 14px; background: repeating-linear-gradient(to right, rgb(36 36 36 / 0.55) 0 1px, transparent 1px calc(100% / 60)) 0 100% / 100% 6px no-repeat, repeating-linear-gradient(to right, rgb(36 36 36 / 0.55) 0 1px, transparent 1px calc(100% / 12)) 0 100% / 100% 14px no-repeat; } .ds-scale-hand { position: absolute; bottom: 0; left: 0; width: 2px; height: 20px; background: var(--crimson, #d71920); animation: ds-sweep 8s linear infinite; } .ds-scale:hover .ds-scale-hand { animation-play-state: paused; } @keyframes ds-sweep { to { left: calc(100% - 2px); } } @media (prefers-reduced-motion: reduce) { .ds-scale-hand { animation: none; } }"
+    },
+    {
+      "name": "Loupe Frame with Rulers",
+      "kind": "custom",
+      "description": "3:2 porcelain window with tick rulers top and left; crimson ticks mark the focal coordinate.",
+      "html": "<div class=\"ds-loupe\"><div class=\"ds-ruler-x\"><span style=\"left:58%\"></span></div><div class=\"ds-ruler-y\"><span style=\"top:40%\"></span></div><div class=\"ds-loupe-window\"><span class=\"ds-reticle\" style=\"left:58%;top:40%\"></span></div></div>",
+      "css": ".ds-loupe { position: relative; padding: 18px 0 0 18px; width: 100%; max-width: 32rem; } .ds-loupe-window { position: relative; aspect-ratio: 3 / 2; background: var(--plate, #e9e9e7); overflow: hidden; } .ds-ruler-x, .ds-ruler-y { position: absolute; } .ds-ruler-x { top: 0; left: 18px; right: 0; height: 12px; background: repeating-linear-gradient(to right, #242424 0 1px, transparent 1px 1.25%) 0 100% / 100% 5px no-repeat, repeating-linear-gradient(to right, #242424 0 1px, transparent 1px 6.25%) 0 100% / 100% 12px no-repeat; } .ds-ruler-y { top: 18px; bottom: 0; left: 0; width: 12px; background: repeating-linear-gradient(to bottom, #242424 0 1px, transparent 1px 1.875%) 100% 0 / 5px 100% no-repeat, repeating-linear-gradient(to bottom, #242424 0 1px, transparent 1px 9.375%) 100% 0 / 12px 100% no-repeat; } .ds-ruler-x span, .ds-ruler-y span { position: absolute; background: var(--crimson, #d71920); transition: left 420ms cubic-bezier(0.16, 1, 0.3, 1), top 420ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-ruler-x span { bottom: 0; width: 2px; height: 16px; } .ds-ruler-y span { right: 0; width: 16px; height: 2px; } .ds-reticle { position: absolute; width: 72px; height: 72px; margin: -36px 0 0 -36px; border: 1px solid rgb(36 36 36 / 0.7); border-radius: 50%; } .ds-loupe:hover .ds-ruler-x span { left: 30% !important; } .ds-loupe:hover .ds-ruler-y span { top: 65% !important; }"
+    },
+    {
+      "name": "Spec Sheet Rows",
+      "kind": "card",
+      "refersTo": "spec-row",
+      "description": "Definition rows on the graphite case back: serif term, mono tabular value, hairline rules.",
+      "html": "<div class=\"ds-specs\"><h3>Audio</h3><dl><div><dt>Driver</dt><dd>10 mm dynamic</dd></div><div><dt>Game-mode latency</dt><dd>45 ms</dd></div><div><dt>Water resistance</dt><dd>IPX5</dd></div></dl></div>",
+      "css": ".ds-specs { padding: 2rem; background: var(--graphite, #242424); color: var(--porcelain, #f8f8f6); font-family: var(--f-serif, 'Bodoni Moda Variable', Didot, serif); } .ds-specs h3 { margin: 0 0 1rem; font-size: 1.375rem; font-weight: 500; letter-spacing: -0.02em; } .ds-specs dl { margin: 0; } .ds-specs dl > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 1rem; padding: 0.9rem 0; border-top: 1px solid rgb(248 248 246 / 0.16); } .ds-specs dl > div:last-child { border-bottom: 1px solid rgb(248 248 246 / 0.16); } .ds-specs dl > div:hover dd { color: var(--porcelain, #f8f8f6); } .ds-specs dt { color: var(--on-dark-2, #b9b9b5); font-size: 0.9375rem; } .ds-specs dd { margin: 0; font: 400 0.8125rem/1.7 var(--f-mono, 'Martian Mono Variable', ui-monospace, monospace); font-variant-numeric: tabular-nums; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Calibre Sheet",
+    "overview": "The earbud is presented the way a haute-horlogerie manufacture presents a new movement: one object, a reference number (Ref. RM-01), macro plates of the real photo, and a sheet of exact figures. The ground is a porcelain dial, the plates are light grey, the ink is graphite, and one section turns over to a graphite \"case back\" for the specifications.\n\nCrimson behaves like a seconds hand. It marks the one thing that is active right now (the primary CTA, the sweeping hand on the minute track, the focal tick on a ruler, the active reference, focus) and nothing else. The minute-track scale, fine ticks with every fifth one longer, is the structural device: hero timeline, loupe rulers, hairline section rules.\n\nDensity is low and deliberate: generous section padding, a 12-column grid, square corners, 1px rules. Rejected: the dark neon esports page, the split hero over feature cards, gradients, glass, glows, rounding, fake 3D.",
+    "keyCharacteristics": [
+      "Porcelain, plate and graphite surfaces with a single crimson accent for the active state.",
+      "High-contrast Didone (Bodoni Moda, optical sizing) for all prose; mono only for references and measured values.",
+      "Minute-track tick scales as the recurring structural motif.",
+      "Square corners, hairline 1px rules, no shadows.",
+      "Real product imagery only, multiplied onto its ground."
+    ],
+    "rules": [
+      { "name": "The Seconds-Hand Rule", "body": "Crimson marks only the active element. When two crimson actions would share a viewport, one steps back: the header CTA turns into a graphite outline while the hero waitlist form is on screen.", "section": "colors" },
+      { "name": "The One Case Back Rule", "body": "Graphite as a ground is used for exactly one section, the specification sheet. Everything else sits on porcelain or plate.", "section": "colors" },
+      { "name": "The Measured-Value Rule", "body": "Mono is for references and figures only. Never set a sentence, heading or button in mono.", "section": "typography" },
+      { "name": "The No-Caps Rule", "body": "Nothing is uppercased or letter-spaced for emphasis; hierarchy comes from size and the Didone's contrast.", "section": "typography" },
+      { "name": "The Hairline-Not-Shadow Rule", "body": "If something needs separating, give it a 1px rule, never a blur.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep crimson to one active element per viewport; quiet any competing CTA to a graphite outline.",
+      "Do use the minute-track tick scale (every fifth tick longer) for rulers, timelines and measured indices.",
+      "Do set references and measured figures in Martian Mono with tabular numerals, and everything else in Bodoni Moda.",
+      "Do separate with 1px rules (rule on light, rule-dark on graphite) and keep every corner square.",
+      "Do multiply real product photography onto plate or porcelain grounds.",
+      "Do give every motion a reduced-motion fallback: static plates, a paused video, no intro."
+    ],
+    "donts": [
+      "Don't use crimson for decoration, headings or backgrounds; the wordmark glyph is the one fixed brand exception.",
+      "Don't add shadows, gradients, glass, glows, blobs or rounded corners.",
+      "Don't set prose, headings or buttons in mono, or uppercase anything for emphasis.",
+      "Don't use graphite as a section ground beyond the single specification sheet.",
+      "Don't add scroll-driven motion outside the loupe, or a second load sequence.",
+      "Don't build fake 3D renders or a feature-card grid."
+    ]
+  }
+}

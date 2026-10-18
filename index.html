@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{brand}} {{ref}} — True wireless earbuds for play and training</title>
+    <meta name="description" content="{{brand}} {{ref}}: faceted red true wireless earbuds with a status light bar, 45 ms game mode and IPX5 sweat resistance. Join the waitlist." />
+    <meta name="theme-color" content="#F8F8F6" />
+    <meta property="og:title" content="{{brand}} {{ref}}" />
+    <meta property="og:description" content="Faceted red true wireless earbuds for competitive play and hard training." />
+    <meta property="og:image" content="/media/earbuds.webp" />
+    <meta property="og:type" content="product" />
+    <link rel="icon" href="/media/logo.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/media/hover-poster.jpg" />
+    <script>
+      (function (d) {
+        d.classList.add('js');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          d.classList.add('intro-hold');
+          setTimeout(function () { d.classList.remove('intro-hold'); }, 2500);
+        }
+      })(document.documentElement);
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#top" aria-label="{{brand}}, back to top">
+        <img class="wordmark__mark" src="/media/logo.webp" alt="" />
+        <span>{{brand}}</span>
+      </a>
+      <p class="ref site-header__ref">Ref. {{ref}}</p>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#specs">Specs</a></li>
+          <li><a class="btn btn--small" href="#reserve" data-header-cta>Reserve</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero__media">
+          <video class="hero__video" data-hero-video muted loop playsinline preload="auto" poster="/media/hover-poster.jpg" aria-hidden="true">
+            <source src="/media/hover.webm" type="video/webm" />
+            <source src="/media/hover.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title">
+            <span class="line"><span data-intro-line>Faceted shells.</span></span>
+            <span class="line"><span data-intro-line>Frame-fast sound.</span></span>
+          </h1>
+          <p class="hero__lede" data-intro>
+            True wireless earbuds for ranked matches and hard training: a 45&nbsp;ms game mode,
+            IPX5 sweat resistance and a light bar you can read across the room.
+          </p>
+          <form class="waitlist" data-waitlist novalidate data-intro>
+            <div class="waitlist__row">
+              <label class="waitlist__label" for="hero-email">Email address</label>
+              <input class="waitlist__input" id="hero-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" aria-describedby="hero-email-msg" />
+              <button class="btn" type="submit">Join the waitlist</button>
+            </div>
+            <p class="waitlist__msg" id="hero-email-msg" data-msg aria-live="polite">{{price}}. {{release}}.</p>
+          </form>
+        </div>
+
+        <div class="hero__dial" data-dial>
+          <div class="scale" aria-hidden="true">
+            <span class="scale__hand" data-dial-hand></span>
+          </div>
+          <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">
+            <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z" /></svg>
+            <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" /></svg>
+            <span data-motion-label>Pause motion</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="statement" aria-label="About {{ref}}">
+        <p class="statement__text">
+          Most earbuds try to disappear. The {{ref}} is meant to be seen: a red shell cut into hard
+          planes around a single bar of white light, built to stay put through a sprint and a
+          five-hour session.
+        </p>
+      </section>
+
+      <section class="loupe" id="design" aria-labelledby="design-title" data-loupe>
+        <div class="loupe__stage" data-loupe-stage>
+          <div class="loupe__frame" id="loupe-frame" data-loupe-frame>
+            <div class="loupe__ruler loupe__ruler--x" aria-hidden="true"><span data-tick-x></span></div>
+            <div class="loupe__ruler loupe__ruler--y" aria-hidden="true"><span data-tick-y></span></div>
+            <div class="loupe__window">
+              <img class="loupe__img" data-loupe-img src="/media/earbuds.webp" width="1536" height="1024" alt="Two Red Medici {{ref}} earbuds: angular metallic red shells with black inner housings, white silicone tips and a glowing white light bar on each." decoding="async" />
+              <span class="loupe__reticle" data-reticle aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="loupe__text">
+            <h2 id="design-title">Every surface has a job.</h2>
+            <ol class="details" data-details>
+              <!--details-->
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="specs" id="specs" aria-labelledby="specs-title">
+        <div class="specs__intro">
+          <h2 id="specs-title">Specifications</h2>
+          <p>Preliminary figures for the {{ref}}.</p>
+          <div class="price">
+            <p class="price__label">{{priceNote}}</p>
+            <p class="price__value">{{price}}</p>
+          </div>
+          <a class="btn" href="#reserve">Reserve a pair</a>
+          <p class="specs__note">Specifications are preliminary and may change before release.</p>
+        </div>
+        <div class="specs__sheet">
+          <!--specs-->
+        </div>
+      </section>
+
+      <section class="reserve" id="reserve" aria-labelledby="reserve-title">
+        <div class="reserve__copy">
+          <h2 id="reserve-title">Reserve a pair.</h2>
+          <p>
+            Join the waitlist and we’ll email you once, when pre-orders open. {{price}} at launch,
+            with the charging case, dongle and four tip sizes in the box.
+          </p>
+          <form class="waitlist" data-waitlist novalidate>
+            <div class="waitlist__row">
+              <label class="waitlist__label" for="reserve-email">Email address</label>
+              <input class="waitlist__input" id="reserve-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" aria-describedby="reserve-email-msg" />
+              <button class="btn" type="submit">Join the waitlist</button>
+            </div>
+            <p class="waitlist__msg" id="reserve-email-msg" data-msg aria-live="polite">One email, no newsletter.</p>
+          </form>
+        </div>
+        <figure class="reserve__plate" aria-hidden="true">
+          <img src="/media/earbuds.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="wordmark wordmark--static">
+        <img class="wordmark__mark" src="/media/logo.webp" alt="" />
+        <span>{{brand}}</span>
+      </p>
+      <p>© 2026 {{brand}}. Specifications and price are preliminary and may change.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
